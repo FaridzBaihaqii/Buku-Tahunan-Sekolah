@@ -8,4 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class angket extends Model
 {
     use HasFactory;
+    protected $table = 'angket';
+    protected $primaryKey = 'id_angket';
+    protected $fillable = ['id_kelas','nama_angket','foto_angket'];
+    public $timestamps = false;
+
+    // ada join an dari id_kelas jadi hati hati
 }

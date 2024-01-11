@@ -11,9 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('akuns', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+        Schema::create('akun', function (Blueprint $table) {
+            // $table->id();
+            // $table->timestamps();
+            $table->integer('id_akun', true);
+            $table->string('username', 60);
+            $table->string('password');
+            $table->enum('role',['admin']);
         });
     }
 
@@ -22,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('akuns');
+        Schema::dropIfExists('akun');
     }
 };
