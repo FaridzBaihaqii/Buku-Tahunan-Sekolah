@@ -17,6 +17,10 @@ class AkunSeeder extends Seeder
             [
                 'username' => 'admin',
                 'password' => Hash::make('123')
+            ],
+            [
+                'username' => 'pengguna',
+                'password' => Hash::make('123')
             ]
         ];
 
