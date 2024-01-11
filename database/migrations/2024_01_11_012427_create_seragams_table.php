@@ -11,9 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('seragams', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+        Schema::create('seragam', function (Blueprint $table) {
+            $table->integer('id_seragam',true,false);
+            $table->integer('kode_sekolah',false);
+            $table->integer('id_hari',false);
+            $table->string('nama_seragam',200)->nullable(false);
+            $table->text('foto_seragam')->nullable(false);
+
+            $table->foreign('kode_sekolah')->references('kode_sekolah')->on('sekolah')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreign('id_hari')->references('id_hari')->on('hari')->onUpdate('cascade')->onDelete('cascade');
         });
     }
 

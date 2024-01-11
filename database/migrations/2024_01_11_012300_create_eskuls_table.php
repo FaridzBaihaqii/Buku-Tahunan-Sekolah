@@ -11,9 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('eskuls', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+        Schema::create('eskul', function (Blueprint $table) {
+            $table->integer('id_eskul',true,false);
+            $table->integer('kode_sekolah',false);
+            $table->string('nama_eskul',200)->nullable(false);
+            $table->string('deskripsi_eskul',200)->nullable(false);
+            $table->text('foto_eskul')->nullable(false);
+
+            $table->foreign('kode_sekolah')->references('kode_sekolah')->on('sekolah')->onUpdate('cascade')->onDelete('cascade');
         });
     }
 
@@ -22,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('eskuls');
+        Schema::dropIfExists('eskul');
     }
 };
