@@ -16,6 +16,8 @@ return new class extends Migration
             // $table->timestamps();
             $table->integer('id_angket',true,false)->nullable(false);
             $table->integer('id_kelas', false)->nullable(false);
+            $table->string('nama_angket', 60)->nullable(false);
+            $table->text('foto_angket')->nullable(false);
             
             $table->foreign('id_kelas')
             ->references('id_kelas')->on('kelas')
