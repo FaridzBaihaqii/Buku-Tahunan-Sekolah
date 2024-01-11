@@ -15,11 +15,11 @@ return new class extends Migration
             // $table->id();
             // $table->timestamps();
             $table->integer('id_kelas',true,false)->nullable(false);
-            $table->integer('id_sekolah', false)->nullable(false);
+            $table->integer('kode_sekolah', false)->nullable(false);
             $table->string('nama_kelas', 60)->nullable(false);
             
-            $table->foreign('id_sekolah')
-            ->references('id_sekolah')->on('sekolah')
+            $table->foreign('kode_sekolah')
+            ->references('kode_sekolah')->on('sekolah')
             ->onUpdate('cascade')->onDelete('cascade');
         });
     }

@@ -11,9 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('gurus', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+        Schema::create('guru', function (Blueprint $table) {
+            $table->integer('id_guru',true,false);
+            $table->integer('kode_sekolah',false);
+            $table->string('nama_guru',200)->nullable(false);
+            $table->text('foto_guru')->nullable(false);
+            $table->string('quotes_guru',200)->nullable(false);
+
+            $table->foreign('kode_sekolah')->references('kode_sekolah')->on('sekolah')->onUpdate('cascade')->onDelete('cascade');
         });
     }
 
@@ -22,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('gurus');
+        Schema::dropIfExists('guru');
     }
 };

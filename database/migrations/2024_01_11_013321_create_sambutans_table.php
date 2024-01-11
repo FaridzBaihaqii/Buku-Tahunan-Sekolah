@@ -11,9 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('sambutans', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+        Schema::create('sambutan', function (Blueprint $table) {
+            $table->integer('id_sambutan',true,false);
+            $table->integer('kode_sekolah',false);
+            $table->integer('id_jenis_sambutan',false);
+            $table->string('isi_sambutan',200)->nullable(false);
+
+            $table->foreign('kode_sekolah')->references('kode_sekolah')->on('sekolah')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreign('id_jenis_sambutan')->references('id_jenis_sambutan')->on('jenis_sambutan')->onUpdate('cascade')->onDelete('cascade');
         });
     }
 
@@ -22,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('sambutans');
+        Schema::dropIfExists('sambutan');
     }
 };
