@@ -14,6 +14,9 @@
     input::placeholder {
         color: #fff !important;
     }
+    .custom-text-color {
+        color: #252B48;
+    }
 </style>
 
 <body>
@@ -33,7 +36,7 @@
                             <div class="card-body">
                                 <form method="POST">
                                     @csrf
-                                    <p class="mb-2 fw-bold fs-3">Login Kedalam Akun</p>
+                                    <p class="mb-2 fw-bold fs-3 custom-text-color">Login Kedalam Akun</p>
                                     <div class="form-outline mb-4">
                                         <div class="input-group">
                                             <span class="input-group-text" style="background:#252B48" >
@@ -84,7 +87,7 @@
                 if (error.response.status === 422) {
                     swal.fire(error.response.data.message, '', 'error')
                 } else {
-                    swal.fire('gagal login, username/password salah')
+                    swal.fire('gagal login, username atau password salah')
                 }
             });
         });
