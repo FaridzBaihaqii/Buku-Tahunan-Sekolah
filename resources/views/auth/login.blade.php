@@ -27,7 +27,7 @@
                 <div class="col-xl-12">
                     <div class="row g-0">
                         <div class="col-lg-3">
-                        <img src="{{ asset('gambar/logo.png') }}" style="width: 90px; margin-left: -80px; margin-top: -200px;">
+                        <img src="{{ asset('gambar/logo.png') }}" style="width: 90px; margin-left: -70px; margin-top: -270px;">
                             <div class="text-white px-4 py-6 p-md-7">
                                 <img src="{{ asset('gambar/bg.png') }}" style="width: 120%; margin-left: 120%;">
                             </div>
