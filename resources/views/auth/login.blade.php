@@ -2,6 +2,9 @@
 <html lang="en">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     @vite(['resources/sass/app.scss','resources/js/app.js'])
 </head>
 <style>
@@ -69,29 +72,5 @@
         </div>
     </section>
 </body>
-<footer>
-    <script type='module'>
-        $('.btnLogin').on('click', function(a) {
-            axios.post('auth/check', {
-                username: $('#userName').val(),
-                password: $('#passWord').val(),
-                _token: '{{csrf_token()}}'
-            }).then(function(response) {
-
-                if (response.data.success) {
-                    window.location.href = response.data.redirect_url;
-                } else {
-                    swal.fire('Gagal login, username atau password salah', '', 'error');
-                }
-            }).catch(function(error) {
-                if (error.response.status === 422) {
-                    swal.fire(error.response.data.message, '', 'error')
-                } else {
-                    swal.fire('gagal login, username atau password salah')
-                }
-            });
-        });
-    </script>
-</footer>
 
 </html>
