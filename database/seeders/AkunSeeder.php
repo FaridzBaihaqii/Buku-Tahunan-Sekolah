@@ -3,8 +3,13 @@
 namespace Database\Seeders;
 
 use App\Models\Akun;
+
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
+use Faker\Factory as Faker;
+
 
 class AkunSeeder extends Seeder
 {
@@ -16,10 +21,7 @@ class AkunSeeder extends Seeder
         $userData = [
             [
                 'username' => 'admin',
-                'password' => Hash::make('123')
-            ],
-            [
-                'username' => 'pengguna',
+                'role' => 'admin',
                 'password' => Hash::make('123')
             ]
         ];
@@ -29,4 +31,6 @@ class AkunSeeder extends Seeder
             Akun::create($val);
         }
     }
-}
+        
+    }
+

@@ -15,8 +15,8 @@ return new class extends Migration
             // $table->id();
             // $table->timestamps();
             $table->integer('id_akun', true);
-            $table->string('username', 60);
-            $table->string('password');
+            $table->string('username', 60)->nullable(false);
+            $table->text('password')->nullable(false);
             $table->enum('role',['admin']);
         });
     }

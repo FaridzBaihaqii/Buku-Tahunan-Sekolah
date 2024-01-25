@@ -21,9 +21,12 @@ Route::get('/',[AuthController::class,'index']);
 Route::post('/',[AuthController::class,'login']);
 Route::get('logout', [AuthController::class, 'logout']);
 
-Route::get('/home', [HomeController::class, 'index']);
-
 Route::middleware(['auth'])->group(function () {
+        Route::prefix('admin')->middleware(['akses:admin'])->group(function () {
+        Route::get('/home', [HomeController::class, 'index']);
+    });
+});
+
     Route::middleware(['akses:Admin'])->group(function() {
         // Admin
             Route::get('/admin', [AdminController::class, 'index']);
@@ -37,4 +40,3 @@ Route::middleware(['auth'])->group(function () {
             Route::get('/admin/unduh', [AdminController::class, 'unduhPendaftaran']);
             Route::delete('/admin/hapus', [AdminController::class, 'destroy']);
         });
-});

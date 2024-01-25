@@ -1,9 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use App\Models\Akun;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
 
 class AuthController extends Controller
 {
@@ -12,54 +13,57 @@ class AuthController extends Controller
      */
     public function index()
     {
-        return view('auth.login');
+        if (!Auth::check()) {
+            return view('auth.login');
+        }
+        $user = Auth::user(['role']);
+        $redirectMap = [
+            'admin' => '/admin/home',
+        ];
+
+        if (isset($redirectMap[$user->role])) {
+            return redirect($redirectMap[$user->role]);
+        }
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
+    public function login(Request $request)
     {
-        //
-    }
+        $validatedData = $request->validate([
+            'username' => 'required',
+            'password' => 'required',
+        ], [
+            'username.required' => 'Username harus diisi',
+            'password.required' => 'Password harus diisi',
+        ]);
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
-    }
+        $credentials = [
+            'username' => $validatedData['username'],
+            'password' => $validatedData['password'],
+        ];
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(Akun $akun)
-    {
-        //
-    }
+        if (Auth::attempt($credentials)) {
+            $user = Auth::user(['role']);
+            Session::regenerateToken();
+            $redirectMap = [
+                'admin' => '/admin/home',
+            ];
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Akun $akun)
-    {
-        //
-    }
+            if (isset($redirectMap[$user->role])) {
+                smilify('success', 'Berhasil Login');
+                return redirect($redirectMap[$user->role]);
+            }
+        }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, Akun $akun)
-    {
-        //
+        Session::regenerateToken();
+        smilify('error', 'Gagal Login');
+        return redirect()->back()->withInput();
+        
     }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(Akun $akun)
+public function logout()
     {
-        //
+
+        Auth::logout();
+        Session::regenerateToken();
+        return redirect('/');
     }
 }
