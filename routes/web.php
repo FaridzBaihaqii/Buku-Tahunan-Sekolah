@@ -17,30 +17,14 @@ use App\Http\Controllers\AdminController;
 |
 */
 
-// Route::middleware(['guest'])->group(function () {
-//     Route::get('/', [AuthController::class, 'index'])->name('login');
-//     Route::post('/', [AuthController::class, 'check']);
-// });
+Route::get('/',[AuthController::class,'index']);
+Route::post('/',[AuthController::class,'login']);
+Route::get('logout', [AuthController::class, 'logout']);
 
-Route::get('/home', function () {
-    return redirect('/dashboard/home');
-});
-
-Auth::routes();
-
-Route::get('', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-// Route::middleware(['guest'])->group(function () {
-//     Route::get('/', [AuthController::class, 'index'])->name('login');
-//     Route::post('/', [AuthController::class, 'check']);
-// });
-
-// Route::get('/home', function () {
-//     return redirect('/');
-// });
+Route::get('/home', [HomeController::class, 'index']);
 
 Route::middleware(['auth'])->group(function () {
-    Route::middleware(['UserPeran:Admin'])->group(function() {
+    Route::middleware(['akses:Admin'])->group(function() {
         // Admin
             Route::get('/admin', [AdminController::class, 'index']);
             Route::get('/admin/tambah', [AdminController::class, 'create']);
