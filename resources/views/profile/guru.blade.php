@@ -21,19 +21,19 @@
             
         }
         .navbar-nav {
-            margin-left: 65%;
+            margin-left: 55%;
             font-size: 20px;
             color: #fff;
        }
 
     </style>
 </head>
-<body style="max-height: 100vh; overflow: hidden;">
+<body >
     <div id="app">
         <nav class="navbar navbar-expand-lg">
         <img src="{{ asset('gambar/smk1.png') }}" style="width: 100px; margin-left: 50px; margin-top: 20px;">
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav navbar-dark"  style="font-family: initial; width: 200%;">
+            <ul class="navbar-nav navbar-dark"  style="font-family: initial; width: 200%;">
                 <li class="nav-item fw-bold">
                     <a class="nav-link" href="visi">Visi Misi</a>
                     <li class="nav-item dropdown fw-bold">
@@ -41,10 +41,10 @@
                         Daftar Isi
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="kepsek">Sambutan Kepala Sekolah</a></li>
-                        <li><a class="dropdown-item" href="kesiswaan">Sambutan Kesiswaan</a></li>
-                        <li><a class="dropdown-item" href="osis">Sambutan Ketus OSIS</a></li>
-                        <li><a class="dropdown-item" href="bts">Sambutan Ketus BTS</a></li>
+                        <li><a class="dropdown-item" href="">Sambutan Kepala Sekolah</a></li>
+                        <li><a class="dropdown-item" href="">Sambutan Kesiswaan</a></li>
+                        <li><a class="dropdown-item" href="">Sambutan Ketus OSIS</a></li>
+                        <li><a class="dropdown-item" href="">Sambutan Ketus BTS</a></li>
                     </ul>
                 </li>
                 <li class="nav-item dropdown fw-bold">
@@ -52,7 +52,6 @@
                         Profile
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="guru">Daftar Guru</a></li>
                         <li><a class="dropdown-item" href="siswa">Daftar Siswa</a></li>
                     </ul>
                 </li>
@@ -70,40 +69,5 @@
                 </ul>
             </div>
         </nav>
-        <div class="" style="color: #fff; margin-left: 15%; font-family: initial; margin-top: 50px;">
-            <h1>SMKN 1 KOTA BEKASI</h1>
-            <div class="" style="color: #fff;">
-                <h2>Alumni Angkatan 25</h2>
-            </div>
-        </div>
-        <img src="{{ asset('gambar/bulan.png') }}" style="width: 25%; margin-left: 75%; margin-top: -5%;">
-
-        <img src="{{ asset('gambar/image.png') }}" style="width: 25%; margin-top: -45%; margin-left: 38%;">
-
-        <div class="scroll-down-btn" style="margin-left: 47%; margin-top: -14%;">
-            <a href="visi" class="btn btn-secondary btn-lg" style="color: #fff;">Scroll Down</a>
-        </div>
-        
-        <main class="py-4">
-            @yield('content')
-        </main>
-    </div>
-    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        $(document).ready(function() {
-            $(".scroll-down-btn a").on('click', function(event) {
-                if (this.hash !== "") {
-                    event.preventDefault();
-                    var hash = this.hash;
-                    $('html, body').animate({
-                        scrollTop: $(hash).offset().top
-                    }, 800, function(){
-                        window.location.hash = hash;
-                    });
-                }
-            });
-        });
-    </script>
 </body>
 </html>

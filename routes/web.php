@@ -3,10 +3,19 @@
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\GuruController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\VisiController;
 use App\Http\Controllers\AdminController;
-use App\Http\Controllers\GuruController;
+use App\Http\Controllers\BtsController;
+use App\Http\Controllers\EskulController;
+use App\Http\Controllers\FasilitasController;
+use App\Http\Controllers\KepsekController;
+use App\Http\Controllers\KesiswaanController;
+use App\Http\Controllers\OsisController;
+use App\Http\Controllers\PraktekController;
+use App\Http\Controllers\SeragamController;
+use App\Http\Controllers\SiswaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,6 +34,17 @@ Route::get('logout', [AuthController::class, 'logout']);
 Route::get('/visi', [VisiController::class, 'index']);
 Route::get('/home', [HomeController::class, 'index']);
 Route::get('/guru', [GuruController::class, 'index']);
+Route::get('/siswa', [SiswaController::class, 'index']);
+Route::get('/kepsek', [KepsekController::class, 'index']);
+Route::get('/kesiswaan', [KesiswaanController::class, 'index']);
+Route::get('/osis', [OsisController::class, 'index']);
+Route::get('/bts', [BtsController::class, 'index']);
+Route::get('/fasilitas', [FasilitasController::class, 'index']);
+Route::get('/eskul', [EskulController::class, 'index']);
+Route::get('/seragam', [SeragamController::class, 'index']);
+Route::get('/praktek', [PraktekController::class, 'index']);
+
+
 Route::middleware(['auth'])->group(function () {
         Route::prefix('admin')->middleware(['akses:admin'])->group(function () {
         Route::get('/home', [HomeController::class, 'index']);
