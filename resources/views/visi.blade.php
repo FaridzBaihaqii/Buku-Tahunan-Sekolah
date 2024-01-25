@@ -36,15 +36,36 @@
                 <ul class="navbar-nav navbar-dark"  style="font-family: initial; width: 200%;">
                 <li class="nav-item fw-bold">
                     <a class="nav-link" href="home">Home</a>
+                    <li class="nav-item dropdown fw-bold">
+                    <a class="nav-link dropdown-toggle" href="" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Daftar Isi
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="">Sambutan Kepala Sekolah</a></li>
+                        <li><a class="dropdown-item" href="">Sambutan Kesiswaan</a></li>
+                        <li><a class="dropdown-item" href="">Sambutan Ketus OSIS</a></li>
+                        <li><a class="dropdown-item" href="">Sambutan Ketus BTS</a></li>
+                    </ul>
                 </li>
-                <li class="nav-item fw-bold">
-                    <a class="nav-link" href="#">Daftar isi</a>
+                <li class="nav-item dropdown fw-bold">
+                    <a class="nav-link dropdown-toggle" href="" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Profile
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="guru">Daftar Guru</a></li>
+                        <li><a class="dropdown-item" href="">Daftar Siswa</a></li>
+                    </ul>
                 </li>
-                <li class="nav-item fw-bold">
-                    <a class="nav-link" href="#">Gallery</a>
-                </li>
-                <li class="nav-item fw-bold">
-                    <a class="nav-link" href="#">Profile</a>
+                <li class="nav-item dropdown fw-bold">
+                    <a class="nav-link dropdown-toggle" href="" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Gallery
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="">Baju Seragam</a></li>
+                        <li><a class="dropdown-item" href="">Baju Praktek</a></li>
+                        <li><a class="dropdown-item" href="">Estrakulikuler</a></li>
+                        <li><a class="dropdown-item" href="">Fasilitas</a></li>
+                    </ul>
                 </li>
                 </ul>
             </div>

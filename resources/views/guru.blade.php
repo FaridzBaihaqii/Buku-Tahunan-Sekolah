@@ -70,40 +70,5 @@
                 </ul>
             </div>
         </nav>
-        <div class="" style="color: #fff; margin-left: 15%; font-family: initial; margin-top: 50px;">
-            <h1>SMKN 1 KOTA BEKASI</h1>
-            <div class="" style="color: #fff;">
-                <h2>Alumni Angkatan 25</h2>
-            </div>
-        </div>
-        <img src="{{ asset('gambar/bulan.png') }}" style="width: 15%; margin-left: 85%; margin-top: 5%;">
-
-        <img src="{{ asset('gambar/image.png') }}" style="width: 25%; margin-top: -32%; margin-left: 38%;">
-
-        <div class="scroll-down-btn" style="margin-left: 47%; margin-top: -8%;">
-            <a href="visi" class="btn btn-secondary btn-lg" style="color: #fff;">Scroll Down</a>
-        </div>
-        
-        <main class="py-4">
-            @yield('content')
-        </main>
-    </div>
-    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        $(document).ready(function() {
-            $(".scroll-down-btn a").on('click', function(event) {
-                if (this.hash !== "") {
-                    event.preventDefault();
-                    var hash = this.hash;
-                    $('html, body').animate({
-                        scrollTop: $(hash).offset().top
-                    }, 800, function(){
-                        window.location.hash = hash;
-                    });
-                }
-            });
-        });
-    </script>
 </body>
 </html>

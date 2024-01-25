@@ -6,6 +6,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\VisiController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\GuruController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,7 +24,7 @@ Route::post('/',[AuthController::class,'login']);
 Route::get('logout', [AuthController::class, 'logout']);
 Route::get('/visi', [VisiController::class, 'index']);
 Route::get('/home', [HomeController::class, 'index']);
-
+Route::get('/guru', [GuruController::class, 'index']);
 Route::middleware(['auth'])->group(function () {
     Route::middleware(['akses:Admin'])->group(function() {
         // Admin
