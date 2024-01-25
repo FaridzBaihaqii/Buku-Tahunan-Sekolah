@@ -17,7 +17,10 @@
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
     <style>
         body {
-            background-color: #242528;
+            background-image: url('/gambar/space1.jpg');
+            background-size: cover;
+            background-repeat: no-repeat; 
+            /* background-color: #242528; */
             
         }
         .navbar-nav {
@@ -76,11 +79,9 @@
                 <h2>Alumni Angkatan 25</h2>
             </div>
         </div>
-        <img src="{{ asset('gambar/bulan.png') }}" style="width: 25%; margin-left: 75%; margin-top: -5%;">
+        <img src="{{ asset('gambar/image.png') }}" style="width: 25%; margin-top: -2%; margin-left: 38%;">
 
-        <img src="{{ asset('gambar/image.png') }}" style="width: 25%; margin-top: -45%; margin-left: 38%;">
-
-        <div class="scroll-down-btn" style="margin-left: 47%; margin-top: -14%;">
+        <div class="scroll-down-btn" style="margin-left: 47%; margin-top: -2%;">
             <a href="visi" class="btn btn-secondary btn-lg" style="color: #fff;">Scroll Down</a>
         </div>
         

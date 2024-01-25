@@ -17,7 +17,10 @@
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
     <style>
         body {
-            background-color: #242528;
+            background-image: url('/gambar/space1.jpg');
+            background-size: cover;
+            background-repeat: no-repeat; 
+            /* background-color: #242528; */
             
         }
         .navbar-nav {
@@ -35,16 +38,19 @@
             <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav navbar-dark"  style="font-family: initial; width: 200%;">
                 <li class="nav-item fw-bold">
+                    <a class="nav-link" href="home">Home</a>
+                <li class="nav-item dropdown fw-bold">
+                <li class="nav-item fw-bold">
                     <a class="nav-link" href="visi">Visi Misi</a>
-                    <li class="nav-item dropdown fw-bold">
+                <li class="nav-item dropdown fw-bold">
                     <a class="nav-link dropdown-toggle" href="" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Daftar Isi
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="">Sambutan Kepala Sekolah</a></li>
-                        <li><a class="dropdown-item" href="">Sambutan Kesiswaan</a></li>
-                        <li><a class="dropdown-item" href="">Sambutan Ketus OSIS</a></li>
-                        <li><a class="dropdown-item" href="">Sambutan Ketus BTS</a></li>
+                        <li><a class="dropdown-item" href="kepsek">Sambutan Kepala Sekolah</a></li>
+                        <li><a class="dropdown-item" href="kesiswaan">Sambutan Kesiswaan</a></li>
+                        <li><a class="dropdown-item" href="osis">Sambutan Ketus OSIS</a></li>
+                        <li><a class="dropdown-item" href="bts">Sambutan Ketus BTS</a></li>
                     </ul>
                 </li>
                 <li class="nav-item dropdown fw-bold">

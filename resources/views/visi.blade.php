@@ -17,7 +17,10 @@
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
     <style>
         body {
-            background-color: #242528;
+            background-image: url('/gambar/space1.jpg');
+            background-size: cover;
+            background-repeat: no-repeat; 
+            /* background-color: #242528; */
             
         }
         .navbar-nav {
@@ -26,9 +29,14 @@
             color: #fff;
        }
 
+       .text {
+        color: #fff;
+        margin-top: -20px;
+       }
+
     </style>
 </head>
-<body >
+<body style="max-height: 100vh; overflow: hidden;">
     <div id="app">
         <nav class="navbar navbar-expand-lg">
         <img src="{{ asset('gambar/smk1.png') }}" style="width: 100px; margin-left: 50px; margin-top: 20px;">
@@ -41,10 +49,10 @@
                         Daftar Isi
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="">Sambutan Kepala Sekolah</a></li>
-                        <li><a class="dropdown-item" href="">Sambutan Kesiswaan</a></li>
-                        <li><a class="dropdown-item" href="">Sambutan Ketus OSIS</a></li>
-                        <li><a class="dropdown-item" href="">Sambutan Ketus BTS</a></li>
+                        <li><a class="dropdown-item" href="kepsek">Sambutan Kepala Sekolah</a></li>
+                        <li><a class="dropdown-item" href="kesiswaan">Sambutan Kesiswaan</a></li>
+                        <li><a class="dropdown-item" href="osis">Sambutan Ketus OSIS</a></li>
+                        <li><a class="dropdown-item" href="bts">Sambutan Ketus BTS</a></li>
                     </ul>
                 </li>
                 <li class="nav-item dropdown fw-bold">
@@ -53,7 +61,7 @@
                     </a>
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="guru">Daftar Guru</a></li>
-                        <li><a class="dropdown-item" href="">Daftar Siswa</a></li>
+                        <li><a class="dropdown-item" href="siswa">Daftar Siswa</a></li>
                     </ul>
                 </li>
                 <li class="nav-item dropdown fw-bold">
@@ -61,10 +69,10 @@
                         Gallery
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="">Baju Seragam</a></li>
-                        <li><a class="dropdown-item" href="">Baju Praktek</a></li>
-                        <li><a class="dropdown-item" href="">Estrakulikuler</a></li>
-                        <li><a class="dropdown-item" href="">Fasilitas</a></li>
+                        <li><a class="dropdown-item" href="seragam">Baju Seragam</a></li>
+                        <li><a class="dropdown-item" href="praktek">Baju Praktek</a></li>
+                        <li><a class="dropdown-item" href="eskul">Estrakulikuler</a></li>
+                        <li><a class="dropdown-item" href="fasilitas">Fasilitas</a></li>
                     </ul>
                 </li>
                 </ul>
@@ -77,9 +85,15 @@
             </div>
         </div>
 
+        <img src="{{ asset('gambar/box.png') }}" style="width: 65%; margin-left: 19%; margin-top: 1%;">
+
         <div class="">
-            shsh
+        <h2 style="color: #fff;">Misi</h2>
+            <div class="">
+            </div>
         </div>
+
+        <img src="{{ asset('gambar/alien.png') }}" style="width: 10%; margin-left: 12%; margin-top: -23%;">
         
         <main class="py-4">
             @yield('content')

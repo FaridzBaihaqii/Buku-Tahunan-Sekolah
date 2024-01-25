@@ -17,11 +17,14 @@
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
     <style>
         body {
-            background-color: #242528;
+            background-image: url('/gambar/space1.jpg');
+            background-size: cover;
+            background-repeat: no-repeat; 
+            /* background-color: #242528; */
             
         }
         .navbar-nav {
-            margin-left: 65%;
+            margin-left: 55%;
             font-size: 20px;
             color: #fff;
        }
@@ -35,9 +38,11 @@
             <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav navbar-dark"  style="font-family: initial; width: 200%;">
                 <li class="nav-item fw-bold">
-                <a class="nav-link" href="visi">Home</a>
+                    <a class="nav-link" href="home">Home</a>
+                <li class="nav-item dropdown fw-bold">
+                <li class="nav-item fw-bold">
                     <a class="nav-link" href="visi">Visi Misi</a>
-                    <li class="nav-item dropdown fw-bold">
+                <li class="nav-item dropdown fw-bold">
                     <a class="nav-link dropdown-toggle" href="" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Daftar Isi
                     </a>
